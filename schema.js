@@ -1,6 +1,6 @@
 const mongoose= require("mongoose")
 const bcrypt = require('bcrypt')
-const lead = new mongoose.Schema({
+const tasks = new mongoose.Schema({
     id:{type:Number,require:true,unique:false},
     updated_at:{type:String,require:false},
     created_at:{type:String,require:true},  
@@ -26,7 +26,7 @@ const users = new mongoose.Schema({
     status:{type:String,require:false},  
 })
 
-const leadModule =mongoose.model("lead",lead)
+const tasksModule =mongoose.model("tasks",tasks)
 const usersModule=mongoose.model("users",users)
 
-module.exports ={leadModule,usersModule}
+module.exports ={tasksModule,usersModule}

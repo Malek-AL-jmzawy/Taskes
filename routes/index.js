@@ -1,9 +1,13 @@
 var express = require('express');
-const { NotExtended } = require('http-errors');
 var router = express.Router();
+const {  addtasks } = require("./controller")
+/* GET home page. */
+
+/* TEST. */
+router.post('/tasks', addtasks);
 
 
-router.get("/",(res,req,next)=>res.json("hallo world"))
+
 
 
 module.exports = router;
