@@ -25,4 +25,22 @@ const addtasks = async (req, res, next) => {
   res.json(result)
 }
 
-module.exports = { addtasks}
+const gettasks = async (req, res, next) => {
+  res.json(await tasksModule.find({}))
+}
+
+const deletetasks = async (req, res, next) => {
+  const {tasks_id}=req.params
+  res.json(await tasksModule.deleteOne({id:tasks_id}))
+}
+
+const Updatetasks = async (req, res, next) => {
+  const {tasks_id}=req.params
+  const {communication}=req.body
+  res.json(await tasksModule.updateOne({id:tasks_id},{
+    communication: communication
+    }))
+}
+
+
+module.exports = { Updatetasks ,deletetasks,gettasks,addtasks}
