@@ -33,11 +33,24 @@ function App() {
         <Route path="/home">
           <Home />
         </Route>
-
+        <Route path="/Users">
+          <Users />
+        </Route>
+        <Route path="/register">
+          <Register />
+        </Route>
+        <Route
+          exact
+          path="/login"
+          render={(props) => (
+            <div>
+              <Login {...props} />
+            </div>
+          )}
+        />
       </div>
-    </Router>  
+    </Router>
   );
-} 
+}
 
 export default App;
- 
