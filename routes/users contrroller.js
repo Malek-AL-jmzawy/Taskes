@@ -24,6 +24,33 @@ const register = async function (req, res, next) {
   res.json(`wellcome ${user_name}`)
 }
 
+const login = async function (req, res, next) {
+  console.log("data");
+  const { email, password } = req.body
+  const targetUser = await usersModule.find({ email: email })
+  console.log("targetUser", targetUser);
+  if (targetUser.length === 0) {
+    res.json("this email is not correct")  
+  }
+  if (!await bcrypt.compare(password, targetUser[0].password)) {
+    console.log("password incorrect");
+    res.json("password incorrect")
+  }
+    const { user_name, user_pic, last_name, mobile, location, role_id } = targetUser[0]
+    const payload = {
+      user_name: user_name, user_pic: user_pic, last_name: last_name, email: email, mobile: mobile
+      , location: location, password: password, role_id: role_id
+    }
+    const options = {
+      expiresIn: process.env.TOKEN_EXPIRATION
+    }
+    const jwtUser =await jwt.sign(payload,process.env.SECRET,options)
+    res.json(jwtUser)
+  }
 
+  const getUsers = async function (req, res, next) {
+      res.json(await usersModule.find({}))
+    }
+/* GET users listing. */
 
-module.exports = { register};
+module.exports = { register, login ,getUsers};
