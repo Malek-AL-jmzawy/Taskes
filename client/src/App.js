@@ -2,10 +2,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import Home from './home';
-import Register from './register';
-import Login from './Login';
-import Users from './Users';
-import Headers from './Header';
+import Register from './componants/register';
+import Login from './componants/Login';
+import Users from './componants/Users';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -34,24 +33,7 @@ function App() {
         <Route path="/home">
           <Home />
         </Route>
-        <Route path="/Users">
-          <Users />
-        </Route>
-        <Route path="/register">
-          <Register />
-        </Route>
-        {/* <Route path="/login">
-        <Login {...props} />
-        </Route> */}
-        <Route
-          exact
-          path="/login"
-          render={(props) => (
-            <div>
-              <Login {...props} />
-            </div>
-          )}
-        />
+
       </div>
     </Router>
   );
