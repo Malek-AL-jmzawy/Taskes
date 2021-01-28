@@ -35,7 +35,7 @@ function App() {
         </Route>
 
       </div>
-    </Router>
+    </Router> 
   );
 }
 
