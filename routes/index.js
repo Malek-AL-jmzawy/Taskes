@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const { errApi, handelError, Updatetasks, deletetasks, gettasks, addtasks } = require("./controller")
-const { register, login,getUsers } = require("./users contrroller")
+const { register } = require("./users contrroller")
 /* GET home page. */
 
 /* TEST. */
