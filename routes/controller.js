@@ -42,5 +42,21 @@ const Updatetasks = async (req, res, next) => {
     }))
 }
 
+/* handeling Error Controller. */
 
-module.exports = { Updatetasks ,deletetasks,gettasks,addtasks}
+const errApi = (req, res, next) => {
+  const newErorr = new Error("{}")
+  res.status(404).json({})
+}
+
+const handelError = (err, req, res, next) => {
+  res.status(err.status);
+  // send the response in JSON format
+  res.json({
+    error: {
+      status: err.status,
+      message: err.message,
+    },
+  });
+}
+module.exports = { errApi, handelError,Updatetasks ,deletetasks,gettasks,addtasks}
