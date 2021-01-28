@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Popup from "reactjs-popup";
 import "reactjs-popup/dist/index.css";
 import axios from "axios";
-import './App.css';
+import '../App.css';
 import {
   BrowserRouter as Router,
   Route,
@@ -40,13 +40,16 @@ function Login(props) {
   return (
     <Router>
       <div className="App">
-        <div>
+        <h1>Login</h1>
+        <div className="register_inputs">
+        <div >
           <input placeholder="Email " onChange={(e) => setEmail(e.target.value)} />
         </div>
         <div>
           <input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)} />
         </div>
         <button onClick={() => login()} >signin</button>
+      </div>
       </div>
     </Router>
   );

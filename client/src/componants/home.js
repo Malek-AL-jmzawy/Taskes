@@ -10,7 +10,7 @@ import {
     Link,
     Redirect,
 } from "react-router-dom";
- 
+
 
 function Home() {
 
@@ -103,7 +103,7 @@ function Home() {
             <Popup
                 trigger={<button className="btn btn-outline-light">Mark Update</button>}
                 on='click'
-                position="center center"
+                position="left center"
             >
                 <div style={{ boxSizing: "content-box", height: "110px" }}>
                     <input style={{ height: "80px", width: "200px" }}  placeholder="Set Mark" onChange={(event) => setmark(event.target.value)} />
@@ -115,7 +115,6 @@ function Home() {
                 position="left center"
             >
                 <div style={{ height: "100px", textAlign: "center" }}>
-
                     <button style={{ marginTop: "40px" }} className="delete_lead_modal_btn" onClick={() => deleteLeads(e.id)}>contiue</button>
                 </div>
             </Popup>
@@ -154,13 +153,12 @@ function Home() {
                                 <select  value={fName} placeholder="first name" onChange={(e) => setfName(e.target.value)}>
                                     {usersArr}
                                 </select>
-                                {/* <input placeholder="last name" onChange={(e) => setlName(e.target.value)} /> */}
                                 <select placeholder="email" onChange={(e) => {setEmail(e.target.value);autoFill()}}>
                                     {emailArr}
                                 </select>
                                 <input value={phoneNum} placeholder="phone number" onChange={(e) => setphoneNum(e.target.value)} />
                                 <input placeholder="tasks" value={tasks} onChange={(e) => setTasks(e.target.value)} />
-                                <input value={locationString} placeholder="location string" onChange={(e) => setlocationString(e.target.value)} />
+                                <input value={locationString} placeholder="location " onChange={(e) => setlocationString(e.target.value)} />
                              
                             </div>
                             <div>

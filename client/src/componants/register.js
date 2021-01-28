@@ -1,9 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-import Popup from "reactjs-popup";
 import axios from "axios";
 import "reactjs-popup/dist/index.css";
-import Home from './home';
-import './App.css';
+import '../App.css';
 import {
   BrowserRouter as Router,
   Route,
@@ -36,23 +34,24 @@ function Register() {
     
   return (
     <Router>
-      <div className="App">
-      <div>
+      <div className="register">
+        <h1>Register</h1> 
+      <div className="register_inputs">
         <div> 
-      <input  placeholder="user_pic " onChange={(e)=>setuser_pic(e.target.value)} />
+      <input  placeholder="user pic URL" onChange={(e)=>setuser_pic(e.target.value)} />
       </div>
       <div>
-      <input  placeholder="setfname "onChange={(e)=>setfname(e.target.value)} />
+      <input  placeholder="user name "onChange={(e)=>setfname(e.target.value)} />
       </div> 
       <div>
-      <input placeholder="setEmail " onChange={(e)=>setEmail(e.target.value)} />
+      <input placeholder="Email " onChange={(e)=>setEmail(e.target.value)} />
       </div>
       <div>
-      <input  placeholder="setMobile "onChange={(e)=>setMobile(e.target.value)} />
+      <input  placeholder="Mobile "onChange={(e)=>setMobile(e.target.value)} />
       </div>
       {/* <input onChange={(e)=>setLocation(e.target.value)} /> */}
       <div>
-      <input  placeholder="setPassword " onChange={(e)=>setPassword(e.target.value)} />
+      <input  placeholder="Password " onChange={(e)=>setPassword(e.target.value)} />
       </div>
       {/* <input onChange={(e)=>setRole_id(e.target.value)} /> */}
       <select onChange={(e)=>setLocation(e.target.value)}>
