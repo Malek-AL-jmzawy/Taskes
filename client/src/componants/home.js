@@ -83,16 +83,16 @@ function Home() {
     const emailArr = Users.map((e, i) =>
         <option>{e.email} </option>
     )
-    const autoFill=()=>{
-    const filterEmail =  Users.filter((e) => e.email === email)
-    console.log("filterEmail",filterEmail[0]);
-    const {user_name,mobile,location,communication}=filterEmail[0]
-    console.log(user_name);
-    setfName(user_name)
-    setlocationString(location)
-    setphoneNum(mobile)
-    setTasks(communication)
-}
+    const autoFill = () => {
+        const filterEmail = Users.filter((e) => e.email === email)
+        console.log("filterEmail", filterEmail[0]);
+        const { user_name, mobile, location, communication } = filterEmail[0]
+        console.log(user_name);
+        setfName(user_name)
+        setlocationString(location)
+        setphoneNum(mobile)
+        setTasks(communication)
+    }
     const leadsArr = leads.map((e, i) => <div key={i} className="span_list_contaner">
         <span>{e.first_name} {e.last_name} </span>
         <span> {e.email} </span>
@@ -106,14 +106,14 @@ function Home() {
                 position="left center"
             >
                 <div style={{ boxSizing: "content-box", height: "110px" }}>
-                    <input style={{ height: "80px", width: "200px" }}  placeholder="Set Mark" onChange={(event) => setmark(event.target.value)} />
+                    <input style={{ height: "80px", width: "200px" }} placeholder="Set Mark" onChange={(event) => setmark(event.target.value)} />
                     <button onClick={() => { updateLeads(e.id) }}>save</button>
                 </div>
             </Popup>
             <Popup
                 trigger={<button className="btn btn-outline-light">Delete</button>}
                 position="left center"
-            >
+            >    are you sure ?
                 <div style={{ height: "100px", textAlign: "center" }}>
                     <button style={{ marginTop: "40px" }} className="delete_lead_modal_btn" onClick={() => deleteLeads(e.id)}>contiue</button>
                 </div>
@@ -150,16 +150,16 @@ function Home() {
                              </button>
                             <div>Add Lead</div>
                             <div className="add_lead_form" >
-                                <select  value={fName} placeholder="first name" onChange={(e) => setfName(e.target.value)}>
+                                <select value={fName} placeholder="first name" onChange={(e) => setfName(e.target.value)}>
                                     {usersArr}
                                 </select>
-                                <select placeholder="email" onChange={(e) => {setEmail(e.target.value);autoFill()}}>
+                                <select placeholder="email" onChange={(e) => { setEmail(e.target.value); autoFill() }}>
                                     {emailArr}
                                 </select>
                                 <input value={phoneNum} placeholder="phone number" onChange={(e) => setphoneNum(e.target.value)} />
                                 <input placeholder="tasks" value={tasks} onChange={(e) => setTasks(e.target.value)} />
                                 <input value={locationString} placeholder="location " onChange={(e) => setlocationString(e.target.value)} />
-                             
+
                             </div>
                             <div>
                                 <button onClick={() => modal.current.close()}>Close</button>
