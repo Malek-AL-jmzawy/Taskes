@@ -5,6 +5,10 @@ const { register, login,getUsers } = require("./users contrroller")
 /* GET home page. */
 
 /* TEST. */
+router.get('/', (req,res)=>{
+    res.json("hallo world")
+});
+
 router.post('/tasks', addtasks);
 
 router.get('/tasks', gettasks);

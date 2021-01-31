@@ -27,6 +27,8 @@
   "config": {
     "mongodbMemoryServer": {
       "version": "latest"
+    },"engines":{
+      "node":"12.18.4"
     }
   },
   "description": "EXPRESS 4.17 SPA",
