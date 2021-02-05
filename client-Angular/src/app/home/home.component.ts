@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,Input, NgModule } from '@angular/core';
 import { HttpService} from '../http.service';
 
 @Component({
@@ -9,14 +9,18 @@ import { HttpService} from '../http.service';
 export class HomeComponent implements OnInit {
 tasks:object={}
 allTasks:Array<Object>=[]
+Name:String="empty"
+Email:String="empty"
+Moblie:String="empty"
+Task:String="empty"
+Location:String="empty"
 body:Object= {
-  id: "newId",
-  first_name: "first_name",
-  last_name: "last_name",
-  email: "email",
-  mobile: "mobile",
-  location_type: "location_type",
-  location_string: "location_string",
+  first_name: this.Name,
+  email: this.Email,
+  mobile: this.Moblie,
+  communication:this.Task,
+  location_type: this.Location,
+  location_string: this.Location,
 }
   constructor(private http:HttpService) { }
 
@@ -26,9 +30,12 @@ body:Object= {
       console.log(data);
   });
   }
+  onKey(event) { this.Name = event.target.value; console.log(this.Name);
+  }
   addOneTask(){
     this.http.addTasks(this.body).subscribe((data)=>console.log(data)
     )
+    this.ngOnInit()
     alert("one task added")
   }
   deleteOneTask(id:Number){

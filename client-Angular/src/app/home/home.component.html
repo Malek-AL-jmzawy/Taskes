@@ -5,14 +5,16 @@
     grid-template-columns: repeat(7,1fr);
     border: 4px solid black;"  >
         <span>id</span>
-        <span>Name</span>
+        <span>User Name</span>
         <span>Email</span>
-        <span>Moblie Num</span>
+        <span>Moblie</span>
         <span>Tasks</span>
-        <span>Location String</span>
+        <span>Location </span>
         <span className="lead_modal_btn" >Action</span>
     </div>
-    <div *ngFor="let value of tasks">
+    <div *ngFor="let value of tasks" style="background-color: rgb(197, 156, 235); display: grid;
+    grid-template-columns: repeat(7,1fr);
+    " >
         <span>{{value.id}}</span>
         <span>{{value.first_name}}</span>
         <span>{{value.email}}</span>
@@ -22,30 +24,11 @@
     </div>
 </div>
 
-
-<!-- first_name
-<ul *ngFor="let value of tasks">
-    <li>{{value.first_name}}</li>
-</ul>
-id
-<ul *ngFor="let value of tasks">
-    <li>{{value.id}}</li>
-</ul>
-mobile
-<ul *ngFor="let value of tasks">
-    <li>{{value.mobile}}</li>
-</ul>
-location_string
-<ul *ngFor="let value of tasks">
-    <li>{{value.location_string}}</li>
-</ul> -->
-
-
-<!-- <div *ngFor="let value of tasks">{{value}}</div> -->
-<!-- <div *ngFor="#value of tasks #key=index">{{key}}:{{value}}</div> -->
 <button (click)="addOneTask()" >addOneTask</button>
-<input/>
-<input/>
-<input/>
-<input/>
-<input/>
+<input placeholder="User Name" [(ngModel)]="Name" (keyup)="onKey($event)" />
+<input placeholder="Email" [(ngModel)]="Email" />
+<input placeholder="Moblie" [(ngModel)]="Moblie" />
+<input placeholder="Tasks" [(ngModel)]="Task" />
+<p> {{Name}} </p>
+<input placeholder="Location" [(ngModel)]="Location" />
+
