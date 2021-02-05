@@ -26,15 +26,18 @@
             <button (click)="deleteOneTask(value.id)" >Delete</button>
             <button (click)="updateOneTask(value.id)" >Update</button>
         </span>
-
     </div>
 </div>
 
 <button (click)="addOneTask()" >addOneTask</button>
-<input placeholder="User Name" [(ngModel)]="Name" (keyup)="onKey($event)" />
-<input placeholder="Email" [(ngModel)]="Email" />
-<input placeholder="Moblie" [(ngModel)]="Moblie" />
-<input placeholder="Tasks" [(ngModel)]="Task" />
+<input placeholder="User Name" [(ngModel)]="Name" #Name (keyup)="onKey($event)" />
+<input placeholder="Email" [(ngModel)]="Email" #Email/>
+<input placeholder="Moblie" [(ngModel)]="Moblie"#Moblie />
+<input placeholder="Tasks" [(ngModel)]="Task" #Tasks/>
 <p> {{Name}} </p>
-<input placeholder="Location" [(ngModel)]="Location" />
+<input placeholder="Location" [(ngModel)]="Location"#Location />
+
+<input #nameInput type="text" class="form-control" placeholder='test'/>
+<button (click)="addPlayer()" >addPlayer()</button>
+
 
