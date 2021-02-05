@@ -41,12 +41,14 @@ body:Object= {
   deleteOneTask(id:Number){
     this.http.deleteTasks(id).subscribe((data)=>console.log(data)
     )
+        this.ngOnInit()
     alert(`task with id ${id} deleted`)
 
   }
   updateOneTask(id:Number){
     this.http.UpdateTasks(id).subscribe((data)=>console.log(data)
     )
+    this.ngOnInit()
     alert(`task with id ${id} updated`)
 
   }

@@ -11,6 +11,7 @@
         <span>Tasks</span>
         <span>Location </span>
         <span className="lead_modal_btn" >Action</span>
+  
     </div>
     <div *ngFor="let value of tasks" style="background-color: rgb(197, 156, 235); display: grid;
     grid-template-columns: repeat(7,1fr);
@@ -21,6 +22,11 @@
         <span>{{value.mobile}}</span>
         <span>{{value.communication}} </span>
         <span>{{value.location_string}}</span>
+        <span>
+            <button (click)="deleteOneTask(value.id)" >Delete</button>
+            <button (click)="updateOneTask(value.id)" >Update</button>
+        </span>
+
     </div>
 </div>
 
