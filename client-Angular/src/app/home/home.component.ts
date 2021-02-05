@@ -14,13 +14,8 @@ export class HomeComponent implements OnInit {
   @ViewChild('Tasks') Tasks: ElementRef;
   @ViewChild('Location') Location: ElementRef;
 
+isAdd:Boolean=true
 tasks:object={}
-// allTasks:Array<Object>=[]
-// Name:String="empty"
-// Email:String="empty"
-// Moblie:String="empty"
-// Task:String="empty"
-// Location:String="empty"
 body:object={}
   constructor(private http:HttpService) { }
 
@@ -30,19 +25,13 @@ body:object={}
       console.log(data);
   });
   }
-  // addPlayer() {
-  //   // you can access the input value via the following syntax.
-  //   this.Name=this.nameInput.nativeElement.value
-  //   console.log('player name: ', this.nameInput.nativeElement.value);
-  // }
-  // onKey(event) { this.Name = event.target.value; console.log(this.Name);
-  // }
+  openAdd(){
+    this.isAdd?(this.isAdd=false):(this.isAdd=true)
+    
+
+  }
   addOneTask(){
-    // this.Name=this.Name.nativeElement.value
-    // this.Email=this.Email.nativeElement.value
-    // this.Moblie=this.Moblie.nativeElement.value
-    // this.Tasks=this.Tasks.nativeElement.value
-    // this.Location=this.Location.nativeElement.value
+
      let body:Object= {
       first_name: this.Name.nativeElement.value,
       email: this.Email.nativeElement.value,
