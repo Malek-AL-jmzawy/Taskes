@@ -1,0 +1,8 @@
+body {
+    background-color: blue;
+}
+.leads_table{
+    display: grid;
+    grid-template-columns: repeat(7,1fr);
+    border: 4px solid black;
+}

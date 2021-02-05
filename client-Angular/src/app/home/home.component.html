@@ -1,4 +1,51 @@
 <p>home works!</p>
-<!-- <ul *ngFor="let task of tasks">
-    <li>{{task}}</li>
+ <!-- [ngClass]="leads_table" -->
+<div className="span_contaner">
+    <div style="background-color: blueviolet; display: grid;
+    grid-template-columns: repeat(7,1fr);
+    border: 4px solid black;"  >
+        <span>id</span>
+        <span>Name</span>
+        <span>Email</span>
+        <span>Moblie Num</span>
+        <span>Tasks</span>
+        <span>Location String</span>
+        <span className="lead_modal_btn" >Action</span>
+    </div>
+    <div *ngFor="let value of tasks">
+        <span>{{value.id}}</span>
+        <span>{{value.first_name}}</span>
+        <span>{{value.email}}</span>
+        <span>{{value.mobile}}</span>
+        <span>{{value.communication}} </span>
+        <span>{{value.location_string}}</span>
+    </div>
+</div>
+
+
+<!-- first_name
+<ul *ngFor="let value of tasks">
+    <li>{{value.first_name}}</li>
+</ul>
+id
+<ul *ngFor="let value of tasks">
+    <li>{{value.id}}</li>
+</ul>
+mobile
+<ul *ngFor="let value of tasks">
+    <li>{{value.mobile}}</li>
+</ul>
+location_string
+<ul *ngFor="let value of tasks">
+    <li>{{value.location_string}}</li>
 </ul> -->
+
+
+<!-- <div *ngFor="let value of tasks">{{value}}</div> -->
+<!-- <div *ngFor="#value of tasks #key=index">{{key}}:{{value}}</div> -->
+<button (click)="addOneTask()" >addOneTask</button>
+<input/>
+<input/>
+<input/>
+<input/>
+<input/>
