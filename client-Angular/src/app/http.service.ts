@@ -17,7 +17,7 @@ export class HttpService {
         deleteTasks(id:Number){
           return this.http.delete(`http://localhost:4000/tasks/${id}`)
           }
-          UpdateTasks(id:Number){
-            return this.http.put(`http://localhost:4000/tasks/${id}`,{})
+          UpdateTasks(id:Number,body:Object){
+            return this.http.put(`http://localhost:4000/tasks/${id}`,body)
             }
 }

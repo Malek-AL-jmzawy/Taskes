@@ -46,7 +46,7 @@ body:Object= {
 
   }
   updateOneTask(id:Number){
-    this.http.UpdateTasks(id).subscribe((data)=>console.log(data)
+    this.http.UpdateTasks(id,this.body).subscribe((data)=>console.log(data)
     )
     this.ngOnInit()
     alert(`task with id ${id} updated`)
