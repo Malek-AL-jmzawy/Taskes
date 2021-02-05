@@ -30,14 +30,14 @@
 </div>
 
 <button (click)="addOneTask()" >addOneTask</button>
-<input placeholder="User Name" [(ngModel)]="Name" #Name (keyup)="onKey($event)" />
-<input placeholder="Email" [(ngModel)]="Email" #Email/>
-<input placeholder="Moblie" [(ngModel)]="Moblie"#Moblie />
-<input placeholder="Tasks" [(ngModel)]="Task" #Tasks/>
+<input placeholder="User Name"  #Name />
+<input placeholder="Email" #Email/>
+<input placeholder="Moblie" #Moblie />
+<input placeholder="Tasks"  #Tasks/>
 <p> {{Name}} </p>
-<input placeholder="Location" [(ngModel)]="Location"#Location />
+<input placeholder="Location" #Location />
 
 <input #nameInput type="text" class="form-control" placeholder='test'/>
-<button (click)="addPlayer()" >addPlayer()</button>
+<!-- <button (click)="addPlayer()" >addPlayer()</button> -->
 
 
